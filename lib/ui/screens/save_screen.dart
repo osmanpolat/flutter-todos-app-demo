@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todos_app/ui/components/my_app_bar.dart';
@@ -14,26 +12,7 @@ class SaveScreen extends StatefulWidget {
 }
 
 class _SaveScreenState extends State<SaveScreen> {
-  var list = [
-    "agac.png",
-    "araba.png",
-    "cicek.png",
-    "damla.png",
-    "gezegen.png",
-    "gunes.png",
-    "roket.png",
-    "semsiye.png",
-    "simsek.png",
-    "yildiz.png",
-  ];
-  var image = "";
   var tfName = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    image = list[Random().nextInt(list.length)];
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +25,6 @@ class _SaveScreenState extends State<SaveScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image.asset("images/$image"),
             Padding(
               padding: const EdgeInsets.only(left: 50, right: 50),
               child: TextField(
@@ -59,7 +37,7 @@ class _SaveScreenState extends State<SaveScreen> {
               height: screenHeight / 15,
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<SaveCubit>().save(tfName.text, image);
+                  context.read<SaveCubit>().save(tfName.text);
                 },
 
                 style: ElevatedButton.styleFrom(backgroundColor: mainColor),

@@ -63,10 +63,6 @@ class _MainScreenState extends State<MainScreen> {
                           child: Card(
                             child: Row(
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Image.asset("images/${toDo.image}"),
-                                ),
                                 Text(
                                   toDo.name,
                                   style: TextStyle(

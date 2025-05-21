@@ -2,11 +2,10 @@ import 'package:todos_app/data/entity/todos.dart';
 import 'package:todos_app/data/sqlite/database_helper.dart';
 
 class TodosDaoRepository {
-  Future<void> save(String name, String image) async {
+  Future<void> save(String name) async {
     var db = await DatabaseHelper.veritabaniErisim();
     var newToDo = <String, dynamic>{};
     newToDo["name"] = name;
-    newToDo["image"] = image;
 
     await db.insert("toDos", newToDo);
   }
@@ -28,8 +27,8 @@ class TodosDaoRepository {
       var row = list[index];
       var id = row["id"];
       var name = row["name"];
-      var image = row["image"];
-      return ToDos(id: id, name: name, image: image);
+
+      return ToDos(id: id, name: name);
     });
   }
 
@@ -44,8 +43,7 @@ class TodosDaoRepository {
       var row = list[index];
       var id = row["id"];
       var name = row["name"];
-      var image = row["image"];
-      return ToDos(id: id, name: name, image: image);
+      return ToDos(id: id, name: name);
     });
   }
 

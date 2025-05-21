@@ -37,7 +37,6 @@ class _UpdateScreenState extends State<UpdateScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image.asset("images/${widget.toDos.image}"),
             Padding(
               padding: const EdgeInsets.only(left: 50, right: 50),
               child: TextField(

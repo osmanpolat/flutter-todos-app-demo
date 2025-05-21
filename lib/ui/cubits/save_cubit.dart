@@ -5,7 +5,7 @@ class SaveCubit extends Cubit<void> {
   SaveCubit() : super(0);
   var toDosDaoRepository = TodosDaoRepository();
 
-  Future<void> save(String name, String image) async {
-    await toDosDaoRepository.save(name, image);
+  Future<void> save(String name) async {
+    await toDosDaoRepository.save(name);
   }
 }
